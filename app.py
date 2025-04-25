@@ -1,9 +1,12 @@
 from flask import Flask, request, send_file
+from flask_cors import CORS  # NEW
+
 import pandas as pd
 import io
 import zipfile
 
 app = Flask(__name__)
+CORS(app)  # NEW
 
 @app.route('/split', methods=['POST'])
 def split_excel():
